@@ -1,8 +1,3 @@
-// Wacel.MA - wacel-api.js - الربط بين SQL و الموقع - 2026
-// كيخدم مع Supabase (PostgreSQL مجاني) + Firebase كـ fallback
-// طريقة الاستعمال: حطو فـ index.html قبل main.js
-
-// ===== 1. الإعدادات - بدلهم بمعلوماتك =====
 const WACEL_CONFIG = {
   supabaseUrl: 'https://YOUR_PROJECT_ID.supabase.co', // من supabase.com
   supabaseKey: 'YOUR_ANON_KEY_HERE', // anon public key
