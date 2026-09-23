@@ -139,6 +139,26 @@ function closeLegal(){document.querySelectorAll('.legal').forEach(e=>e.classList
 </script> 
   <a href="/wacel-legal-pages.html" style="color:white; text-decoration:underline;">
   📄 سياسة الخصوصية والشروط الكاملة
-  </a>
+  </a> 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// تفعيل الأنيميشن عند التمرير
+AOS.init();
+
+// وضع ليلي
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// بحث فوري في الكتب
+const searchInput = document.getElementById('search');
+searchInput?.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('.book-card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(term)? 'block' : 'none';
+  });
+});
+</script>
 </body>
 </html>
