@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wacel | البوابة المغربية الشاملة - كتب، أخبار، مونديال 2030، ترفيه ومتجر</title>
+<meta name="description" content="Wacel البوابة المغربية الأولى: أخبار محلية ودولية، تحليلات بالذكاء الاصطناعي، كتب، فيديوهات، أغاني، أفلام، وثائقيات، مجلات، منتدى، متجر المنتوجات المغربية، وتغطية خاصة لمونديال 2030.">
+<meta name="keywords" content="Wacel, أخبار المغرب, مونديال 2030, كتب, أفلام, أغاني, متجر مغربي, وثائقيات, ترفيه, تحليل ذكاء اصطناعي, Morocco World Cup 2030">
+<meta name="author" content="Wacel">
+<link rel="canonical" href="https://wacel.vercel.app/">
+
+<!-- Open Graph للشهرة -->
+<meta property="og:title" content="Wacel - البوابة المغربية الشاملة">
+<meta property="og:description" content="كل ما يهم المغربي: أخبار، مونديال 2030، كتب، ترفيه، ومتجر وطني - مع تحليل بالذكاء الاصطناعي">
+<meta property="og:image" content="https://wacel.vercel.app/og-preview.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_MA">
+
+<!-- Monetization Verification - ضع أكوادك هنا -->
+<!-- Google AdSense: ضع كودك هنا <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXX"> -->
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="ضع كود التحقق هنا">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { cairo: ['Cairo'] } } } }
+</script>
+<style>
+body{font-family:'Cairo',sans-serif}
+.ticker{animation: ticker 60s linear infinite}
+@keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.glass{backdrop-filter:blur(12px); background:rgba(255,255,255,0.8)}
+.dark .glass{background:rgba(15,23,42,0.8)}
+.ai-glow{box-shadow:0 0 20px rgba(99,102,241,0.4)}
+</style>
+
+<!-- Schema.org للربح والـ SEO -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"NewsMediaOrganization",
+ "name":"Wacel",
+ "url":"https://wacel.vercel.app",
+ "logo":"https://wacel.vercel.app/logo.png",
+ "sameAs":["https://facebook.com/wacel","https://instagram.com/topiciuscotem"],
+ "potentialAction":{"@type":"SearchAction","target":"https://wacel.vercel.app/?s={search_term}","query-input":"required name=search_term"}
+}
+</script>
+<link rel="manifest" href="/manifest.json">
+</head>
+<body class="bg-[#f8f9fc] dark:bg-slate-950 text-slate-900 dark:text-white transition-all">
+
+<!-- ====== 1. شريط علوي للأخبار العاجلة + تاريخ ====== -->
+<div class="bg-black text-white text-sm py-2 px-4 flex justify-between items-center">
+  <div class="flex gap-4">
+    <span id="today-date"></span>
+    <span class="bg-red-600 px-2 py-0.5 rounded animate-pulse">عاجل</span>
+  </div>
+  <div class="overflow-hidden w-[60%] whitespace-nowrap">
+    <div class="ticker inline-block">🔥 المغرب يستعد لمونديال 2030 | المنتوجات المغربية تغزو المتجر | تحليل AI جديد: مستقبل الاقتصاد المغربي | انضم لمنتدى Wacel واربح نقاط...</div>
+  </div>
+</div>
+
+<!-- ====== 2. إعلان علوي - مكان ربح 1 (AdSense) ====== -->
+<div class="w-full bg-gray-100 dark:bg-slate-900 flex justify-center py-2 border-b">
+  <div class="w-full max-w-[728px] h-[90px] bg-gray-200 dark:bg-slate-800 rounded flex items-center justify-center text-xs text-gray-500">
+    <!-- ضع كود AdSense هنا - Top Banner -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto"></ins> -->
+    مساحة إعلانية - Top Banner 728x90 - AdSense
+  </div>
+</div>
+
+<!-- ====== 3. Header ====== -->
+<header class="sticky top-0 z-50 glass border-b dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-6">
+      <h1 class="text-2xl font-black text-indigo-600">Wacel<span class="text-orange-500">.MA</span></h1>
+      <nav class="hidden lg:flex gap-5 text-sm font-bold">
+        <a href="#news" class="hover:text-indigo-600">أخبار</a>
+        <a href="#worldcup2030" class="text-green-600">مونديال 2030</a>
+        <a href="#ai-analysis" class="flex items-center gap-1"><i class="fa-solid fa-robot text-indigo-500"></i> تحليل AI</a>
+        <a href="#library">كتب</a>
+        <a href="#video">فيديو</a>
+        <a href="#store" class="text-orange-600">المتجر المغربي</a>
+        <a href="#forum">المنتدى</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="relative hidden md:block">
+        <input id="searchBox" placeholder="ابحث: كتاب، خبر، منتوج..." class="bg-white dark:bg-slate-800 border rounded-full py-2 px-4 pr-10 w-64 text-sm">
+        <i class="fa fa-search absolute right-3 top-3 text-gray-400"></i>
+      </div>
+      <button onclick="toggleDark()" class="w-9 h-9 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center"><i class="fa fa-moon"></i></button>
+      <a href="#login" class="bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-bold">دخول / اشتراك - ربح نقاط</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-12 gap-6">
+
+<!-- ====== العمود الرئيسي ====== -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+
+  <!-- HERO - مونديال 2030 -->
+  <section id="worldcup2030" class="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-green-700 to-red-600 p-8 text-white">
+    <div class="flex justify-between items-start">
+      <div>
+        <span class="bg-white text-green-700 px-3 py-1 rounded-full text-xs font-black">تغطية خاصة</span>
+        <h2 class="text-4xl font-black mt-4 leading-tight">المغرب 2030<br>حلم المونديال يصبح حقيقة</h2>
+        <p class="mt-3 opacity-90">تابع كل جديد: الملاعب، التذاكر، المنتوجات الرسمية، وتحليلات AI لمسار المنتخب</p>
+        <div id="countdown" class="flex gap-3 mt-5 font-bold text-xl"></div>
+        <button class="mt-6 bg-white text-green-700 px-6 py-3 rounded-full font-black">اقرأ ملف المونديال الكامل <i class="fa fa-arrow-left mr-2"></i></button>
+      </div>
+      <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=400" class="w-40 h-40 rounded-2xl object-cover hidden md:block">
+    </div>
+  </section>
+
+  <!-- قسم تحليل AI التفاعلي - للربح العالي -->
+  <section id="ai-analysis" class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-indigo-100 dark:border-slate-800 ai-glow">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-black flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-indigo-500"></i> مقالات تحليلية بالذكاء الاصطناعي</h3>
+      <span class="text-xs bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">جديد - يزيد وقت البقاء = أرباح أعلى</span>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <article class="border rounded-xl p-4 hover:shadow-lg transition cursor-pointer" onclick="openAIAnalysis('اقتصاد')">
+        <h4 class="font-bold">تحليل AI: هل سيرفع المونديال الناتج الداخلي للمغرب 40%؟</h4>
+        <p class="text-sm text-gray-500 mt-2">تحليل تفاعلي بالرسوم البيانية والمصادر الحية...</p>
+        <div class="mt-3 flex gap-2 text-xs"><span class="bg-green-100 text-green-700 px-2 py-1 rounded">مقال مميز - CPM عالي</span><span>5 د قراءة</span></div>
+      </article>
+      <article class="border rounded-xl p-4 hover:shadow-lg transition">
+        <h4 class="font-bold">تحليل AI: المنتوجات المغربية الأكثر طلباً قبل 2030</h4>
+        <p class="text-sm text-gray-500 mt-2">الذكاء الاصطناعي يحلل بيانات Jumia و Amazon...</p>
+        <button class="mt-3 text-indigo-600 font-bold text-sm">تفاعل مع التحليل <i class="fa fa-chart-line"></i></button>
+      </article>
+    </div>
+  </section>
+
+  <!-- إعلان داخل المحتوى - مكان ربح 2 -->
+  <div class="bg-gray-100 dark:bg-slate-800 rounded-xl h-[250px] flex items-center justify-center text-gray-500 text-sm">
+    <!-- In-Feed AdSense - مربح جداً -->
+    <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXX" data-ad-slot="222222" data-ad-format="fluid"></ins> -->
+    إعلان In-Feed - ضع كود AdSense هنا (أعلى ربح)
+  </div>
+
+  <!-- تبويبات المكتبة الشاملة -->
+  <section id="library" class="bg-white dark:bg-slate-900 rounded-2xl p-6">
+    <div class="flex flex-wrap gap-2 mb-6 border-b pb-4">
+      <button class="tab-btn active bg-black text-white px-4 py-2 rounded-full text-sm" data-tab="books"><i class="fa fa-book"></i> كتب</button>
+      <button class="tab-btn px-4 py-2 rounded-full text-sm bg-gray-100" data-tab="videos"><i class="fa fa-video"></i> فيديوهات</button>
+      <button class="tab-btn px-4 py-2 rounded-full text-sm bg-gray-100" data-tab="songs"><i class="fa fa-music"></i> أغاني</button>
+      <button class="tab-btn px-4 py-2 rounded-full text-sm bg-gray-100" data-tab="docs"><i class="fa fa-film"></i> وثائقيات</button>
+      <button class="tab-btn px-4 py-2 rounded-full text-sm bg-gray-100" data-tab="movies"><i class="fa fa-clapperboard"></i> أفلام</button>
+      <button class="tab-btn px-4 py-2 rounded-full text-sm bg-gray-100" data-tab="magazines"><i class="fa fa-newspaper"></i> مجلات</button>
+    </div>
+    <div id="tab-books" class="tab-content grid grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- كتب - مع رابط أفلييت -->
+      <div class="book-card border rounded-xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=300" class="h-40 w-full object-cover">
+        <div class="p-3"><h5 class="font-bold text-sm">كتاب مغربي رقمي</h5><a href="#" class="text-xs text-orange-600 font-bold">شراء عبر Jumia - تربح عمولة 8% ↗</a></div>
+      </div>
+      <div class="book-card border rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=300" class="h-40 w-full object-cover"><div class="p-3"><h5 class="font-bold text-sm">رواية 2030</h5><span class="text-xs bg-green-100 px-2 py-1 rounded">مجاني</span></div></div>
+    </div>
+  </section>
+
+  <!-- أخبار محلية وإقليمية ودولية -->
+  <section id="news" class="grid md:grid-cols-3 gap-4">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4"><h4 class="font-black border-r-4 border-red-600 pr-2 mb-3">محلية</h4><ul class="text-sm space-y-2"><li>الدار البيضاء تطلق ترامواي جديد</li><li>أسعار المنتوجات التقليدية ترتفع</li></ul></div>
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4"><h4 class="font-black border-r-4 border-blue-600 pr-2 mb-3">إقليمية</h4><ul class="text-sm space-y-2"><li>أخبار شمال إفريقيا</li><li>الاقتصاد الإقليمي</li></ul></div>
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4"><h4 class="font-black border-r-4 border-black pr-2 mb-3">دولية + النجوم</h4><div class="space-y-3"><a href="https://instagram.com/cristiano" target="_blank" class="flex items-center gap-2 text-sm"><i class="fab fa-instagram text-pink-600"></i> تفاعل كريستيانو - مباشر</a><a href="https://x.com/elonmusk" target="_blank" class="flex items-center gap-2 text-sm"><i class="fab fa-x-twitter"></i> إيلون ماسك - تغريدات مباشرة</a></div></div>
+  </section>
+
+  <!-- متجر المنتوجات المغربية - ربح مباشر -->
+  <section id="store" class="bg-gradient-to-br from-orange-50 to-amber-100 dark:from-slate-900 dark:to-slate-800 rounded-2xl p-6 border border-orange-200">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-black">🛍️ متجر Wacel - صنع في المغرب</h3>
+      <a href="#" class="text-sm bg-black text-white px-4 py-2 rounded-full">تصفح المتجر - الدفع عند الاستلام</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl p-3 text-center"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=200" class="h-24 mx-auto object-contain"><p class="text-sm font-bold mt-2">زيت أركان أصلي</p><p class="text-orange-600 font-black">149 MAD</p><button class="w-full mt-2 bg-orange-500 text-white text-xs py-2 rounded-full">اشتري الآن - تربح 20%</button></div>
+      <div class="bg-white rounded-xl p-3 text-center"><img src="https://images.unsplash.com/photo-1590732596287-4bb7b5e1a2f8?q=80&w=200" class="h-24 mx-auto object-contain"><p class="text-sm font-bold mt-2">جلابة مغربية</p><p class="text-orange-600 font-black">399 MAD</p><button class="w-full mt-2 bg-orange-500 text-white text-xs py-2 rounded-full">اشتري</button></div>
+      <div class="bg-white rounded-xl p-3 text-center"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=200" class="h-24 mx-auto object-contain"><p class="text-sm font-bold mt-2">منتوج فخار ناظور</p><p class="text-orange-600 font-black">89 MAD</p></div>
+      <div class="bg-white rounded-xl p-3 text-center border-2 border-dashed"><p class="text-xs mt-8">+ أضف منتوجك هنا<br>اربح عمولة<br><a href="#" class="text-indigo-600 underline">سجل كبائع</a></p></div>
+    </div>
+    <p class="text-xs text-gray-500 mt-3">* الربح: 10-25% عمولة على كل بيع + Google Merchant + Jumia Affiliate</p>
+  </section>
+
+  <!-- منتدى الأعضاء -->
+  <section id="forum" class="bg-white dark:bg-slate-900 rounded-2xl p-6">
+    <h3 class="font-black text-lg mb-4">💬 منتدى الأعضاء - تفاعل واربح نقاط</h3>
+    <div class="space-y-3">
+      <div class="flex justify-between items-center border-b pb-3"><span class="text-sm">ما هي توقعاتك لمونديال 2030؟</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">🔥 234 تعليق</span></div>
+      <div class="flex justify-between items-center border-b pb-3"><span class="text-sm">أفضل كتاب قرأته هذا الشهر؟</span><span class="text-xs bg-gray-100 px-2 py-1 rounded">89 تعليق</span></div>
+    </div>
+    <button class="mt-4 w-full border-2 border-dashed py-3 rounded-xl text-sm">+ أنشئ موضوع جديد واربح 10 نقاط (النقاط = خصم في المتجر)</button>
+  </section>
+
+</div>
+
+<!-- ====== الشريط الجانبي - للربح الثابت ====== -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+
+  <!-- إعلان جانبي ثابت - أعلى ربح -->
+  <div class="sticky top-24 space-y-6">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border">
+      <p class="text-xs text-gray-400 mb-2">إعلان - Sidebar Sticky (أغلى مكان)</p>
+      <div class="h-[300px] bg-gray-100 dark:bg-slate-800 rounded flex items-center justify-center text-xs">
+        <!-- AdSense Sidebar -->
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXX" data-ad-slot="333333" style="display:block; width:300px; height:250px"></ins> -->
+        300x250 - AdSense / Ezoic
+      </div>
+    </div>
+
+    <!-- اشتراك مدفوع - ربح شهري -->
+    <div class="bg-black text-white rounded-2xl p-6">
+      <h4 class="font-black">⭐ اشتراك Wacel برو - 29 MAD/شهر</h4>
+      <ul class="text-sm mt-3 space-y-2 opacity-80 list-disc pr-5">
+        <li>بدون إعلانات</li>
+        <li>تحليلات AI غير محدودة</li>
+        <li>تحميل كتب وأفلام</li>
+        <li>خصم 20% في المتجر</li>
+      </ul>
+      <button class="w-full mt-4 bg-white text-black py-3 rounded-full font-black">اشترك الآن - Stripe / PayPal / MoPay</button>
+      <p class="text-[10px] mt-2 opacity-50">* هذا هو الربح المستمر الحقيقي</p>
+    </div>
+
+    <!-- أفلييت -->
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border">
+      <h4 class="font-bold text-sm mb-3">🔥 منتجات مقترحة - أفلييت</h4>
+      <a href="https://www.jumia.ma/..." class="flex gap-3 border-b pb-3 mb-3"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=100" class="w-16 h-16 rounded"><div><p class="text-sm font-bold">سماعات بلوتوث</p><p class="text-xs text-gray-500">عمولة 6% من Jumia</p></div></a>
+      <a href="#" class="flex gap-3"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=100" class="w-16 h-16 rounded"><div><p class="text-sm font-bold">كتاب رقمي Amazon</p><p class="text-xs text-gray-500">عمولة 10%</p></div></a>
+    </div>
+
+    <!-- تفاعلات النجوم المباشرة -->
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-4">
+      <h4 class="font-black mb-3">🌟 تفاعلات النجوم - مباشر</h4>
+      <div class="grid grid-cols-3 gap-2 text-center text-xs">
+        <a href="https://instagram.com/khabib" target="_blank" class="border rounded-xl p-2"><i class="fab fa-instagram text-xl text-pink-600"></i><br>حبيب</a>
+        <a href="https://www.tiktok.com/@charlidamelio" target="_blank" class="border rounded-xl p-2"><i class="fab fa-tiktok text-xl"></i><br>Charli</a>
+        <a href="https://x.com/KingJames" target="_blank" class="border rounded-xl p-2"><i class="fab fa-x-twitter text-xl"></i><br>LeBron</a>
+      </div>
+      <p class="text-[10px] text-gray-400 mt-3">روابط مباشرة تزيد مدة البقاء + مشاركة</p>
+    </div>
+
+    <!-- تبرع - Buy Me a Coffee -->
+    <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 rounded-2xl p-4 text-center">
+      <p class="text-sm font-bold">☕ ادعم Wacel</p>
+      <p class="text-xs mt-1">كل تبرع يساعدنا نستمر مجاناً</p>
+      <a href="https://www.buymeacoffee.com/..." class="inline-block mt-3 bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-black">Buy Me a Coffee</a>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-black text-white mt-12 py-10 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+    <div><h5 class="font-black text-lg">Wacel.MA</h5><p class="opacity-60 mt-2">البوابة المغربية الشاملة - من الدار البيضاء إلى العالم. مشروع مغربي 100% يستعد لمونديال 2030.</p><div class="flex gap-3 mt-4 text-xl"><i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i class="fab fa-youtube"></i><i class="fab fa-tiktok"></i></div></div>
+    <div><h6 class="font-bold">أقسام</h6><ul class="mt-3 space-y-2 opacity-70"><li><a href="#news">أخبار</a></li><li><a href="#worldcup2030">مونديال 2030</a></li><li><a href="#store">المتجر المغربي</a></li><li><a href="wacel-legal-pages.html">الشروط والخصوصية</a></li></ul></div>
+    <div><h6 class="font-bold">الربح - شفافية</h6><p class="opacity-60 mt-3 text-xs">نربح من الإعلانات (AdSense)، العمولة (Jumia/Amazon)، الاشتراكات، والمتجر. هذا يدعم استمرار المحتوى المجاني. <a href="wacel-legal-pages.html" class="underline">سياسة الربح</a></p></div>
+    <div><h6 class="font-bold">النشرة البريدية - ربح بالإيميل</h6><input placeholder="بريدك الإلكتروني" class="w-full mt-3 p-3 rounded bg-white/10 text-white"><button class="w-full mt-2 bg-white text-black py-2 rounded font-bold">اشترك - هدية كتاب مجاني</button><p class="text-[10px] opacity-50 mt-2">نبني قائمة إيميل = ربح دائم</p></div>
+  </div>
+  <p class="text-center text-xs opacity-40 mt-10">© 2026 Wacel.MA - جميع الحقوق محفوظة - صنع بفخر في المغرب 🇲🇦</p>
+</footer>
+
+<!-- ====== سكريبتات ====== -->
+<script>
+// تاريخ اليوم
+document.getElementById('today-date').innerText = new Date().toLocaleDateString('ar-MA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+// عد تنازلي لمونديال 2030
+function updateCountdown(){
+  const target = new Date('2030-06-13T00:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = target-now;
+  const d = Math.floor(diff/(1000*60*60*24));
+  document.getElementById('countdown').innerHTML = `<span>${d} يوم</span> <span>حتى 2030</span>`;
+}
+updateCountdown();
+
+// وضع ليلي
+function toggleDark(){ document.documentElement.classList.toggle('dark'); localStorage.setItem('dark',document.documentElement.classList.contains('dark')) }
+if(localStorage.getItem('dark')==='true') document.documentElement.classList.add('dark');
+
+// تبويبات
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active','bg-black','text-white'));
+    btn.classList.add('active','bg-black','text-white');
+  })
+});
+
+// بحث
+document.getElementById('searchBox')?.addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('.book-card').forEach(c=>{
+    c.style.display = c.innerText.toLowerCase().includes(q) ? '' : 'none';
+  })
+});
+
+// تحليل AI - نافذة تفاعلية
+function openAIAnalysis(topic){
+  alert('🤖 تحليل AI تفاعلي لـ '+topic+'\n\nهنا سيرتبط مع API ديال OpenAI / Gemini\n- يولد مقال تحليلي مع رسوم بيانية\n- يزيد مدة بقاء الزائر 4x = أرباح AdSense x3\n\nضع مفتاح API هنا في الكود');
+}
+
+// تحميل إعلانات AdSense بعد تحميل الصفحة (للسرعة)
+window.addEventListener('load',()=>{
+  // ضع سكريبت AdSense هنا:
+  // var s=document.createElement('script'); s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX'; s.crossOrigin='anonymous'; document.head.appendChild(s);
+})
+</script>
+
+<!-- مكان سكريبت AdSense - مهم للربح -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+</body>
+</html>
