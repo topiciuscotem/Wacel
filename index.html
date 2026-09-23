@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wacel.MA | البوابة المغربية الشاملة - مونديال 2030</title>
+<meta name="description" content="Wacel بوابة مغربية: أخبار، مونديال 2030، كتب، فيديو، متجر مغربي، منتدى - الدفع عند الاستلام">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{background:#f8f9fc;color:#0f172a;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.top-bar{background:#000;color:#fff;padding:8px 12px;font-size:12px;display:flex;justify-content:space-between;align-items:center}
+.ad-box{background:#e2e8f0;border:2px dashed #94a3b8;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;margin:10px auto}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;padding:12px}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:22px;color:#4f46e5} .logo span{color:#f97316}
+.nav{display:flex;gap:8px;flex-wrap:wrap}
+.nav a{background:#f1f5f9;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.nav a.active,.nav a:hover{background:#000;color:#fff}
+.btn-main{background:#4f46e5;color:#fff;padding:10px 18px;border-radius:999px;font-weight:900;font-size:13px;border:none;cursor:pointer}
+.hero{background:linear-gradient(135deg,#15803d,#dc2626);color:#fff;border-radius:24px;padding:24px;margin:16px auto;max-width:1200px;position:relative;overflow:hidden}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+.tab-btn{background:#f1f5f9;border:none;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin:2px}
+.tab-btn.active{background:#000;color:#fff}
+.tab-content{display:none} .tab-content.active{display:block}
+.product{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;text-align:center;padding-bottom:10px}
+.product img{width:100%;height:130px;object-fit:cover}
+.price{color:#f97316;font-weight:900}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+.modal.active{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:500px;width:100%;padding:20px;max-height:85vh;overflow:auto}
+footer{background:#000;color:#fff;padding:30px 16px;margin-top:30px;font-size:12px}
+footer a{text-decoration:underline;opacity:0.8}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span id="today"></span>
+  <span style="background:#dc2626;padding:3px 8px;border-radius:12px">عاجل</span>
+</div>
+
+<div class="ad-box" style="max-width:728px;height:70px">Top Banner - مساحة إعلانية AdSense - كتخدم</div>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">Wacel<span>.MA</span></div>
+    <div class="nav">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#worldcup">مونديال 2030</a>
+      <a href="#ai">تحليل AI</a>
+      <a href="#library">المكتبة</a>
+      <a href="#news">أخبار</a>
+      <a href="#store">المتجر</a>
+      <a href="#forum">المنتدى</a>
+      <a href="wacel-legal-pages.html">القانون</a>
+    </div>
+    <button class="btn-main" onclick="document.getElementById('search').focus()">بحث <i class="fa fa-search"></i></button>
+  </div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 12px">
+
+  <div style="margin:12px 0;display:flex;gap:8px">
+    <input id="search" placeholder="ابحث: كتاب، خبر، منتوج..." style="flex:1;padding:10px 14px;border-radius:999px;border:1px solid #e2e8f0">
+    <button class="btn-main" onclick="doSearch()">بحث</button>
+  </div>
+
+  <section id="worldcup" class="hero">
+    <span style="background:#fff;color:#15803d;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:900">تغطية خاصة</span>
+    <h1 style="font-size:28px;font-weight:900;margin-top:10px;line-height:1.3">المغرب 2030<br>حلم المونديال يصبح حقيقة</h1>
+    <p style="font-size:13px;opacity:0.9;margin-top:8px">تابع الملاعب، التذاكر، المنتوجات الرسمية، وتحليلات AI لمسار المنتخب</p>
+    <div id="countdown" style="display:flex;gap:8px;margin-top:12px;font-weight:900"></div>
+    <button class="btn-main" style="background:#fff;color:#15803d;margin-top:14px" onclick="document.getElementById('worldcup-details').scrollIntoView({behavior:'smooth'})">اقرأ ملف المونديال الكامل ←</button>
+  </section>
+
+  <section id="ai" class="card" style="border-color:#a5b4fc">
+    <h2 style="font-weight:900"><i class="fa-solid fa-wand-magic-sparkles" style="color:#6366f1"></i> مقالات تحليلية بالذكاء الاصطناعي</h2>
+    <div class="grid-2" style="margin-top:12px">
+      <div class="card" style="cursor:pointer" onclick="openAI('اقتصاد المونديال')">
+        <h4 style="font-weight:900;font-size:14px">تحليل AI: هل سيرفع المونديال الناتج الداخلي 40%؟</h4>
+        <p style="font-size:12px;color:#64748b;margin-top:6px">تحليل تفاعلي بالرسوم البيانية...</p>
+        <span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:8px;font-size:10px">5 د قراءة</span>
+      </div>
+      <div class="card" style="cursor:pointer" onclick="openAI('المنتوجات المغربية')">
+        <h4 style="font-weight:900;font-size:14px">تحليل AI: المنتوجات الأكثر طلباً قبل 2030</h4>
+        <p style="font-size:12px;color:#64748b;margin-top:6px">الذكاء الاصطناعي يحلل Jumia و Amazon...</p>
+        <button style="color:#4f46e5;font-weight:900;border:none;background:none;font-size:12px;margin-top:6px">تفاعل مع التحليل <i class="fa fa-chart-line"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-box" style="height:120px">In-Feed AdSense - كيخدم - ضع كودك هنا بعدين</div>
+
+  <section id="library" class="card">
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+      <button class="tab-btn active" onclick="showTab('books',this)">📚 كتب</button>
+      <button class="tab-btn" onclick="showTab('videos',this)">🎬 فيديوهات</button>
+      <button class="tab-btn" onclick="showTab('songs',this)">🎵 أغاني</button>
+      <button class="tab-btn" onclick="showTab('docs',this)">🎞️ وثائقيات</button>
+      <button class="tab-btn" onclick="showTab('movies',this)">🍿 أفلام</button>
+      <button class="tab-btn" onclick="showTab('mags',this)">📰 مجلات</button>
+    </div>
+    <div id="tab-books" class="tab-content active">
+      <div class="grid-2">
+        <div class="product"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"><div style="padding:8px"><b style="font-size:13px">كتاب مغربي رقمي</b><br><span style="font-size:11px;color:#f97316">شراء عبر Jumia - عمولة 8%</span></div></div>
+        <div class="product"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400"><div style="padding:8px"><b style="font-size:13px">رواية 2030</b><br><span style="background:#dcfce7;padding:2px 6px;border-radius:6px;font-size:10px">مجاني</span></div></div>
+      </div>
+    </div>
+    <div id="tab-videos" class="tab-content"><p style="font-size:13px">🎬 فيديوهات: <a href="https://www.youtube.com/results?search_query=المغرب+2030" target="_blank" style="color:#4f46e5;text-decoration:underline">شاهد فيديوهات مونديال 2030 على يوتيوب</a></p><iframe width="100%" height="200" style="border-radius:12px;margin-top:8px" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allowfullscreen></iframe></div>
+    <div id="tab-songs" class="tab-content"><p style="font-size:13px">🎵 أغاني مغربية - <a href="https://www.youtube.com/results?search_query=اغاني+مغربية" target="_blank" style="color:#4f46e5">استمع على يوتيوب</a></p></div>
+    <div id="tab-docs" class="tab-content"><p style="font-size:13px">🎞️ وثائقيات مغربية - قريبا</p></div>
+    <div id="tab-movies" class="tab-content"><p style="font-size:13px">🍿 أفلام - قريبا</p></div>
+    <div id="tab-mags" class="tab-content"><p style="font-size:13px">📰 مجلات - قريبا</p></div>
+  </section>
+
+  <section id="news" class="grid-2">
+    <div class="card"><h4 style="font-weight:900;border-right:4px solid #dc2626;padding-right:8px">محلية</h4><p style="font-size:13px;margin-top:8px">الدار البيضاء تطلق ترامواي جديد<br>أسعار المنتوجات التقليدية ترتفع</p><button onclick="openNews('محلية')" style="margin-top:8px;font-size:11px;background:#000;color:#fff;border:none;padding:6px 12px;border-radius:20px">اقرأ أكثر</button></div>
+    <div class="card"><h4 style="font-weight:900;border-right:4px solid #2563eb;padding-right:8px">إقليمية</h4><p style="font-size:13px;margin-top:8px">أخبار شمال إفريقيا<br>الاقتصاد الإقليمي</p><button onclick="openNews('إقليمية')" style="margin-top:8px;font-size:11px;background:#000;color:#fff;border:none;padding:6px 12px;border-radius:20px">اقرأ أكثر</button></div>
+    <div class="card"><h4 style="font-weight:900;border-right:4px solid #000;padding-right:8px">دولية + النجوم</h4><p style="font-size:12px;margin-top:8px"><a href="https://instagram.com/cristiano" target="_blank"><i class="fab fa-instagram" style="color:#e1306c"></i> تفاعل كريستيانو - مباشر</a><br><a href="https://x.com/elonmusk" target="_blank"><i class="fab fa-x-twitter"></i> إيلون ماسك - مباشر</a></p></div>
+    <div class="card" id="worldcup-details"><h4 style="font-weight:900">🏟️ ملاعب مونديال 2030</h4><p style="font-size:12px;margin-top:6px">• ملعب الحسن الثاني - الدار البيضاء - 115,000 متفرج<br>• ملعب الرباط - 69,000<br>• ملعب طنجة - 75,000<br>• ملعب مراكش - 45,000</p></div>
+  </section>
+
+  <section id="store" class="card" style="background:#fff7ed;border-color:#fed7aa">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <h3 style="font-weight:900">🛍️ متجر Wacel - صنع في المغرب 🇲🇦</h3>
+      <button class="btn-main" style="background:#000" onclick="openStore()">تصفح المتجر - الدفع عند الاستلام</button>
+    </div>
+    <div class="grid-2" style="margin-top:12px">
+      <div class="product"><img src="https://images.unsplash.com/photo-1608571423902-eed4a94d8108?w=400"><div style="padding:8px"><b style="font-size:13px">زيت أركان أصلي</b><br><span class="price">149 MAD</span><br><button onclick="addToCart('زيت أركان',149)" style="width:100%;margin-top:6px;background:#f97316;color:#fff;border:none;padding:8px;border-radius:20px;font-weight:900;font-size:12px">أضف للسلة</button></div></div>
+      <div class="product"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400"><div style="padding:8px"><b style="font-size:13px">جلابة مغربية</b><br><span class="price">399 MAD</span><br><button onclick="addToCart('جلابة',399)" style="width:100%;margin-top:6px;background:#f97316;color:#fff;border:none;padding:8px;border-radius:20px;font-weight:900;font-size:12px">أضف للسلة</button></div></div>
+    </div>
+    <div id="cart" style="margin-top:12px;background:#fff;padding:10px;border-radius:10px;border:1px dashed #fed7aa;display:none">
+      <b style="font-size:13px">🛒 سلتك:</b><div id="cart-items" style="font-size:12px;margin-top:6px"></div>
+      <div style="display:flex;gap:8px;margin-top:10px"><input id="c-name" placeholder="اسمك" style="flex:1;padding:8px;border-radius:8px;border:1px solid #e2e8f0"><input id="c-phone" placeholder="هاتف واتساب" style="flex:1;padding:8px;border-radius:8px;border:1px solid #e2e8f0"></div>
+      <button onclick="sendOrder()" style="width:100%;margin-top:8px;background:#000;color:#fff;padding:10px;border-radius:20px;border:none;font-weight:900">إرسال الطلب واتساب - الدفع عند الاستلام</button>
+    </div>
+  </section>
+
+  <section id="forum" class="card">
+    <h3 style="font-weight:900">💬 منتدى الأعضاء - تفاعل واربح نقاط</h3>
+    <div style="margin-top:10px">
+      <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e2e8f0;font-size:13px"><span>ما هي توقعاتك لمونديال 2030؟</span><span style="background:#f1f5f9;padding:2px 8px;border-radius:10px;font-size:11px">🔥 234 تعليق</span></div>
+      <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e2e8f0;font-size:13px"><span>أفضل كتاب قرأته هذا الشهر؟</span><span style="background:#f1f5f9;padding:2px 8px;border-radius:10px;font-size:11px">89 تعليق</span></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <input id="forum-input" placeholder="اكتب موضوع جديد..." style="flex:1;padding:10px;border-radius:20px;border:1px solid #e2e8f0">
+      <button class="btn-main" onclick="addForum()">نشر +10 نقاط</button>
+    </div>
+    <div id="forum-list" style="margin-top:12px"></div>
+  </section>
+
+  <div class="ad-box" style="height:120px">إعلان Sidebar Sticky 300x250 - AdSense - كيخدم</div>
+
+  <div class="card" style="background:#000;color:#fff">
+    <h3 style="font-weight:900">⭐ اشتراك Wacel برو - 29 درهم/شهر</h3>
+    <ul style="font-size:12px;margin-top:8px;opacity:0.8;line-height:2"><li>بدون إعلانات</li><li>تحليلات AI غير محدودة</li><li>خصم 20% في المتجر</li></ul>
+    <button class="btn-main" style="background:#fff;color:#000;width:100%;margin-top:12px" onclick="alert('قريبا: الدفع عبر MoPay / Stripe')">اشترك الآن</button>
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+    <div><b>Wacel.MA</b><p style="margin-top:8px;opacity:0.7">البوابة المغربية الشاملة - من الدار البيضاء إلى العالم. مشروع مغربي 100% يستعد لمونديال 2030.</p></div>
+    <div><b>أقسام</b><br><a href="#news">أخبار</a><br><a href="#worldcup">مونديال 2030</a><br><a href="#store">المتجر</a><br><a href="wacel-legal-pages.html">الشروط والخصوصية</a></div>
+    <div><b>الربح - شفافية</b><p style="opacity:0.6;margin-top:8px">نربح من الإعلانات والعمولة والاشتراكات - هذا يدعم المحتوى المجاني.</p></div>
+    <div><b>النشرة</b><br><input id="email" placeholder="بريدك الإلكتروني" style="width:100%;margin-top:8px;padding:8px;border-radius:8px;border:none"><button class="btn-main" style="background:#fff;color:#000;width:100%;margin-top:6px" onclick="subscribe()">اشترك - كتاب مجاني</button></div>
+  </div>
+  <p style="text-align:center;opacity:0.4;margin-top:20px">© 2026 Wacel.MA - صنع بفخر في المغرب 🇲🇦</p>
+</footer>
+
+<!-- Modal AI -->
+<div id="ai-modal" class="modal" onclick="this.classList.remove('active')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div style="display:flex;justify-content:space-between;align-items:center"><h3 id="ai-title" style="font-weight:900">تحليل AI</h3><button onclick="document.getElementById('ai-modal').classList.remove('active')" style="background:#eee;border:none;width:30px;height:30px;border-radius:50%">✕</button></div>
+    <div id="ai-content" style="margin-top:12px;font-size:13px;line-height:1.8;background:#f8fafc;padding:12px;border-radius:10px"></div>
+    <button class="btn-main" style="width:100%;margin-top:12px" onclick="document.getElementById('ai-modal').classList.remove('active')">إغلاق</button>
+  </div>
+</div>
+
+<script>
+// تاريخ
+document.getElementById('today').textContent = new Date().toLocaleDateString('ar-MA',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+
+// عد تنازلي
+function updateCD(){
+  const target = new Date('2030-06-13').getTime();
+  const diff = target - Date.now();
+  const d = Math.floor(diff/(1000*60*60*24));
+  document.getElementById('countdown').innerHTML = '<span style="background:rgba(0,0,0,0.3);padding:6px 10px;border-radius:10px">'+d+' يوم حتى 2030</span>';
+}
+updateCD(); setInterval(updateCD, 60000);
+
+// تبويبات - هذا اللي كان ما خدامش قبل
+function showTab(id, btn){
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// تحليل AI
+function openAI(topic){
+  document.getElementById('ai-title').textContent = 'تحليل AI: ' + topic;
+  document.getElementById('ai-content').innerHTML = 'حسب تحليل AI لبيانات 2023-2026، المغرب سيستفيد من:<br>• 45% نمو في السياحة<br>• 120,000 منصب شغل<br>• الطلب على المنتوجات المحلية +80%<br><br><b>توصية:</b> ركّز على المتجر قبل 2028.<br><br><small>هذا تحليل تجريبي - تقدر تربطو مع OpenAI API لاحقا</small>';
+  document.getElementById('ai-modal').classList.add('active');
+  // نقاط
+  let p = parseInt(localStorage.getItem('wacel_points')||'0')+5; localStorage.setItem('wacel_points',p);
+}
+
+// بحث
+function doSearch(){
+  const q = document.getElementById('search').value.toLowerCase();
+  if(!q) return alert('اكتب شي حاجة للبحث');
+  alert('🔍 نتائج البحث عن: '+q+'\n(قريبا: بحث حقيقي فـ SQL)');
+  document.getElementById('search').value='';
+}
+
+// متجر - سلة
+let cart=[];
+function addToCart(name,price){
+  cart.push({name,price});
+  document.getElementById('cart').style.display='block';
+  document.getElementById('cart-items').innerHTML = cart.map(c=>c.name+' - '+c.price+' MAD').join('<br>');
+  document.getElementById('store').scrollIntoView({behavior:'smooth'});
+}
+function openStore(){ document.getElementById('store').scrollIntoView({behavior:'smooth'}); document.getElementById('cart').style.display='block'; }
+function sendOrder(){
+  const name=document.getElementById('c-name').value; const phone=document.getElementById('c-phone').value;
+  if(!name||!phone) return alert('دخل اسمك ورقم واتساب');
+  const total=cart.reduce((s,c)=>s+c.price,0);
+  const msg = 'طلب جديد Wacel.MA%0Aالاسم: '+name+'%0Aالهاتف: '+phone+'%0Aالمنتجات: '+cart.map(c=>c.name).join(', ')+'%0Aالمجموع: '+total+' MAD%0Aالدفع عند الاستلام';
+  window.open('https://wa.me/212600000000?text='+msg,'_blank');
+  alert('✅ تم إرسال الطلب لواتساب! غادي نعيطو ليك');
+  cart=[]; document.getElementById('cart').style.display='none';
+}
+
+// منتدى
+function addForum(){
+  const input=document.getElementById('forum-input'); const txt=input.value.trim();
+  if(!txt) return;
+  const list=document.getElementById('forum-list');
+  const div=document.createElement('div');
+  div.className='card'; div.style.cssText='padding:10px;font-size:13px;margin-top:8px';
+  div.textContent='🆕 '+txt+' - الآن';
+  list.prepend(div);
+  input.value=''; 
+  let p=parseInt(localStorage.getItem('wacel_points')||'0')+10; localStorage.setItem('wacel_points',p);
+  alert('تم النشر +10 نقاط! مجموعك: '+p);
+}
+function openNews(type){ alert('📰 أخبار '+type+'\nقريبا: صفحة أخبار كاملة مع SQL'); }
+function subscribe(){ const e=document.getElementById('email').value; if(!e.includes('@')) return alert('دخل إيميل صحيح'); alert('شكرا! هديتك كتاب مجاني غادي يوصلك'); localStorage.setItem('wacel_email',e); }
+
+// smooth scroll لكل الروابط
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', function(e){
+    const id=this.getAttribute('href').slice(1);
+    const el=document.getElementById(id);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
